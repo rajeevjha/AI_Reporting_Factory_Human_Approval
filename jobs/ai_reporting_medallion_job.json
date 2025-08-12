@@ -1,0 +1,49 @@
+{
+  "name": "AI_Reporting_Medallion_Pipeline",
+  "tasks": [
+    {
+      "task_key": "bronze",
+      "notebook_task": {
+        "notebook_path": "/Repos/your_repo/notebooks/01_bronze_ingestion.ipynb"
+      },
+      "existing_cluster_id": "YOUR_CLUSTER_ID"
+    },
+    {
+      "task_key": "silver",
+      "depends_on": [
+        {
+          "task_key": "bronze"
+        }
+      ],
+      "notebook_task": {
+        "notebook_path": "/Repos/your_repo/notebooks/02_silver_transformation.ipynb"
+      },
+      "existing_cluster_id": "YOUR_CLUSTER_ID"
+    },
+    {
+      "task_key": "gold",
+      "depends_on": [
+        {
+          "task_key": "silver"
+        }
+      ],
+      "notebook_task": {
+        "notebook_path": "/Repos/your_repo/notebooks/03_gold_enrichment.ipynb"
+      },
+      "existing_cluster_id": "YOUR_CLUSTER_ID"
+    },
+    {
+      "task_key": "ai_gen",
+      "depends_on": [
+        {
+          "task_key": "gold"
+        }
+      ],
+      "notebook_task": {
+        "notebook_path": "/Repos/your_repo/notebooks/04_ai_sql_generator.ipynb"
+      },
+      "existing_cluster_id": "YOUR_CLUSTER_ID"
+    }
+  ],
+  "format": "MULTI_TASK"
+}
