@@ -7,16 +7,19 @@ from databricks.sdk.core import Config
 import uuid
 
 cfg = Config()
+DATABRICKS_HOST = cfg.host or os.getenv("DATABRICKS_HOST")
+HTTP_PATH = "/sql/1.0/warehouses/81e36fef03fb86d0" #os.getenv("DATABRICKS_HTTP_PATH")
 
 @st.cache_resource
 def get_connection():
     return sql.connect(
-        server_hostname=cfg.host,
-        http_path=cfg.http_path,
+        server_hostname=DATABRICKS_HOST,
+        http_path=HTTP_PATH,
         credentials_provider=lambda: cfg.authenticate,
     )
 
 conn = get_connection()
+
 
 def fetch_pending_reports():
     with conn.cursor() as cur:

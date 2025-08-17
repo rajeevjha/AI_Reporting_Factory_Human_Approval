@@ -11,6 +11,7 @@
       "SUM(CASE WHEN isFraud = 1 THEN 1 ELSE 0 END) AS fraud_count"
     ],
     "filters": "amount > 0",
+    "export_format": "csv",
     "dashboard": "KYC Report Dashboard",
     "widget_title": "Fraud by Account Type",
     "certify": true,
@@ -29,6 +30,7 @@
       "SUM(CASE WHEN isFraud = 1 THEN 1 ELSE 0 END) AS fraud_count"
     ],
     "filters": "",
+    "export_format": "csv",
     "dashboard": "KYC Report Dashboard",
     "widget_title": "Daily Fraud Trend",
     "certify": false,
