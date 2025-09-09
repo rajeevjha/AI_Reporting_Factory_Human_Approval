@@ -7,8 +7,8 @@ import pandas as pd
 # -------------------------
 # Streamlit Page Setup
 # -------------------------
-st.set_page_config(page_title="🛡 Human Approval for AI SQL", layout="wide")
-st.title("🛡 Human Approval Workflow")
+st.set_page_config(page_title="🛡 Approval for AI SQL", layout="wide")
+st.title("🛡 AI SQL Approval")
 
 # -------------------------
 # Databricks Config & Env Vars
