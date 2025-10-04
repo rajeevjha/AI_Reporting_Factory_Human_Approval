@@ -16,7 +16,7 @@
     "widget_title": "Fraud by Account Type",
     "certify": true,
     "notify": [
-      "risk_officer@example.com"
+      "rajeevjha@aol.in"
     ]
   },
   {
@@ -34,6 +34,6 @@
     "dashboard": "KYC Report Dashboard",
     "widget_title": "Daily Fraud Trend",
     "certify": false,
-    "notify": []
+    "notify": ["rajeevjha@aol.in"]
   }
 ]
